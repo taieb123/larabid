@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Admin.layouts.index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'DashboardController@index');
+
+Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin2', 'as' => 'admin.'], function () {
+
+});
