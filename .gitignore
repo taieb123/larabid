@@ -87,3 +87,4 @@ Homestead.json
 storage/*.key
 #VSOCDE history
 .history/*
+/node_modules

@@ -1,0 +1,9 @@
+Solution:
+To solve this issue, you have to create “framework” folder inside the storage directory.
+ Inside the “framework” directory create 3 more directories as “sessions, views and cache” as below:
+
+/path/to/laravel/storage/framework/
+
+sessions
+views
+cache
