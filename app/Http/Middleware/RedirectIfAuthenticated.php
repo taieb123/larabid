@@ -19,9 +19,19 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
-        }
-
-        return $next($request);
+            $role = Auth::user()->role; 
+            switch ($role) {
+                case 'admin':
+                    return '/admins';
+                    break;
+                case 'user':
+                  return '/';
+                  break; 
+                default:
+                  return '/'; 
+                break;
+              }
+          }
+          return $next($request);
     }
 }
