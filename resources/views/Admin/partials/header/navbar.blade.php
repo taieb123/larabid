@@ -26,7 +26,8 @@
                     <li>
                         <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="graph_flot.html">List Users</a></li>
+                            <li><a href="{{ route('user.index')}}">List Users</a></li>
+                            <li><a href="graph_flot.html">Blocked list users</a></li>
                         </ul>
                     </li>
                     <li>

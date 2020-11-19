@@ -23,6 +23,7 @@ Route::get('/', function () {
 /**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {
     Route::get('/', 'Admin\DashboardController@index');
+    Route::resource('user', 'Admin\UserController');
 });
 
 /**This Group for USer acces who need auth and Role Middleware */

@@ -8,7 +8,12 @@
     <div id="wrapper">
          @include('Admin.partials.header.navbar')
          
-         @yield('content')
+          <div id="page-wrapper" class="gray-bg dashbard-1">
+            @include('Admin.partials.header.topnavbar')
+
+            @yield('content')
+            
+          </div>
     </div>
     
     @include('Admin.partials.script')
