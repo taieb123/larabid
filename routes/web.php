@@ -13,24 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('Admin.layouts.index');
-// });
 
 Auth::routes();
-
-
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+/**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {
     Route::get('/', 'Admin\DashboardController@index');
 });
 
-
+/**This Group for USer acces who need auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:user']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 });
