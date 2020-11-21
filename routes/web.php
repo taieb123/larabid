@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('User.layouts.index');
 });
 
 /**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
