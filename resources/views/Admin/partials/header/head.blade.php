@@ -10,6 +10,9 @@
     <!-- Toastr style -->
     <link href="{{ asset('Admin/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
 
+    <!-- Sweet Alert -->
+    <link href="{{ asset('Admin/css/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet">
+
     <!-- Gritter -->
     <link href="{{ asset('Admin/js/plugins/gritter/jquery.gritter.css') }}" rel="stylesheet">
 

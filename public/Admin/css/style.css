@@ -2019,6 +2019,10 @@ button.dim:active:before {
   border: 2px solid #1ab394;
   border-radius: 2px;
 }
+.onoffswitch.red .onoffswitch-label{
+    border-color: #e94048;
+}
+
 .onoffswitch-inner {
   width: 200%;
   margin-left: -100%;
@@ -2048,6 +2052,10 @@ button.dim:active:before {
   background-color: #1ab394;
   color: #FFFFFF;
 }
+
+.onoffswitch.red .onoffswitch-inner:before{
+    background-color: #e94048;
+}
 .onoffswitch-inner:after {
   content: "OFF";
   padding-right: 10px;
@@ -2069,6 +2077,10 @@ button.dim:active:before {
   -webkit-transition: all 0.3s ease-in 0s;
   -o-transition: all 0.3s ease-in 0s;
   transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch.red .onoffswitch-switch{
+    border-color: #e94048;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;

@@ -1,7 +1,7 @@
     <!-- Mainly scripts -->
     <script src="{{ asset('Admin/js/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('Admin/js/popper.min.js') }}"></script>
-    <script src="{{ asset('Admin/js/bootstrap.js"') }}"></script>
+    <script src="{{ asset('Admin/js/bootstrap.js') }}"></script>
     <script src="{{ asset('Admin/js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
     <script src="{{ asset('Admin/js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
@@ -37,5 +37,8 @@
 
     <!-- Toastr -->
     <script src="{{ asset('Admin/js/plugins/toastr/toastr.min.js') }}"></script>
+
+    <script src="{{ asset('Admin/js/plugins/sweetalert/sweetalert.min.js') }}"></script>
+
 
     <script src="{{ asset('Admin/js/sites.js') }}"></script>
