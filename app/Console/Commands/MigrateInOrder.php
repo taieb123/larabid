@@ -43,6 +43,7 @@ class MigrateInOrder extends Command
                 '2019_08_19_000000_create_failed_jobs_table.php',
                 '2020_11_21_134221_create_category_table.php',
                 '2020_11_21_134052_create_subcategory_table.php',
+                '2020_11_21_190742_create_sysfile_table.php'
             ];
 
             foreach($migrations as $migration)
