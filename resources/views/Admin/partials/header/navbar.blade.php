@@ -24,10 +24,8 @@
                     <li>
                         <a href="#"><i class="fa fa-list"></i> <span class="nav-label">Category</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{ route('category.create')}}">Create Category</a></li>
-                            <li><a href="{{ route('subcategory.create')}}">Create Sub-category</a></li>
-                            <li><a href="{{ route('category.index')}}">list categories</a></li>
-                            <li><a href="{{ route('subcategory.index')}}">list Sub-categories</a></li>
+                            <li><a href="{{ route('category.index')}}">Gestion categories</a></li>
+                            <li><a href="{{ route('subcategory.index')}}">Gestion Sub-categories</a></li>
                         </ul>
                     </li>
                     <li>

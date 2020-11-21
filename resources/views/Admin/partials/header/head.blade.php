@@ -13,6 +13,9 @@
     <!-- Sweet Alert -->
     <link href="{{ asset('Admin/css/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet">
 
+     <!-- FooTable -->
+     <link href="{{ asset('Admin/css/plugins/footable/footable.core.css') }}" rel="stylesheet">
+
     <!-- Gritter -->
     <link href="{{ asset('Admin/js/plugins/gritter/jquery.gritter.css') }}" rel="stylesheet">
 

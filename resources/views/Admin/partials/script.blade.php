@@ -40,5 +40,7 @@
 
     <script src="{{ asset('Admin/js/plugins/sweetalert/sweetalert.min.js') }}"></script>
 
+    <script src="{{ asset('Admin/js/plugins/footable/footable.all.min.js') }}"></script>
+
 
     <script src="{{ asset('Admin/js/sites.js') }}"></script>
