@@ -15,7 +15,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.templates.subcategory.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.templates.subcategory.create');
     }
 
     /**

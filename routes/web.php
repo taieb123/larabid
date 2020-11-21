@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {
     Route::get('/', 'Admin\DashboardController@index');
     Route::resource('user', 'Admin\UserController');
+    Route::resource('category', 'Admin\CategoryController');
+    Route::resource('subcategory', 'Admin\SubcategoryController');
 });
 
 /**This Group for USer acces who need auth and Role Middleware */
