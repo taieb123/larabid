@@ -40,9 +40,15 @@ $(document).on('click','.delete_category_btn',function(){
 });
 
 
-$(document).ready(function() {
-
+$(function() {
     $('.footable').footable();
     $('.footable2').footable();
 
+    $('.custom-file-input').on('change', function() {
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+     });
+
 });
+
+

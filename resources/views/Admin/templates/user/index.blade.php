@@ -44,8 +44,6 @@
                                     </td>
                                     <td>
                                         <button class="btn btn-info " data-toggle="modal" data-target="#myModal2" type="button"><i class="fa fa-paste"></i> Edit</button>
-                                    </td>
-                                    <td>
                                         <button class="btn btn-warning delete_user_btn" data-id="1" type="button"><i class="fa fa-warning"></i> <span class="bold">Warning</span></button>
                                     </td>
                                 </tr>
