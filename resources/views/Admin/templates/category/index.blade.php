@@ -97,7 +97,7 @@
 <!--Modal-->
 <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('category.update') }}" method="POST" enctype="multipart/form-data">
             <div class="modal-content animated flipInY">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
