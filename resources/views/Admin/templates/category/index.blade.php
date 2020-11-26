@@ -6,6 +6,13 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
+            @if ($message = Session::get('success'))
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                </div>
+            @endif
         <div class="col-lg-7">
             <div class="ibox ">
                 <div class="ibox-title">
@@ -18,6 +25,7 @@
                 </div>
                 <div class="ibox-content">
                     <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group row"><label class="col-lg-2 col-form-label">Title</label>
                             <div class="col-lg-10"><input type="text" name="title" placeholder="Title"
                                     class="form-control">
@@ -68,14 +76,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($categories as $item)
+                            <tr>
+                                <td>{{ $item->title }}</td>
+                                <td>{{ $item->description }}</td>
+                                <td>taieb</td>
+                                <td>
+                                    <button class="btn btn-info " data-toggle="modal" data-target="#myModal{{ $item->id }}"
+                                        type="button"><i class="fa fa-paste"></i> Edit</button>
+                                    <button class="btn btn-warning delete_category_btn" data-route="{{ route('category.destroy', $item->id) }}" data-id="{{ $item->id }}" type="button"><i
+                                            class="fa fa-warning"></i> <span class="bold">Warning</span></button>
+                                </td>
+                            </tr>
+
+                            @endforeach
                             <tr>
                                 <td>Voiture</td>
                                 <td>category du voiture</td>
                                 <td>bmw,citroen, peugeot</td>
                                 <td>
-                                    <button class="btn btn-info " data-toggle="modal" data-target="#myModal2"
+                                    <button class="btn btn-info " data-toggle="modal" data-target="#myModal1"
                                         type="button"><i class="fa fa-paste"></i> Edit</button>
-                                    <button class="btn btn-warning delete_category_btn" data-id="1" type="button"><i
+                                    <button class="btn btn-warning delete_category_btn" data-route="{{ route('category.destroy', $item->id) }}" data-id="1" type="button"><i
                                             class="fa fa-warning"></i> <span class="bold">Warning</span></button>
                                 </td>
                             </tr>
@@ -95,24 +117,27 @@
     </div>
 </div>
 <!--Modal-->
-<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+@foreach ($categories as $item)
+<div class="modal inmodal" id="myModal{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="{{ route('category.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('category.update',$item->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
             <div class="modal-content animated flipInY">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
                             aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title">Catrgory informztion</h4>
+                    <h4 class="modal-title">Catrgory information</h4>
                 </div>
                 <div class="modal-body">
 
                     <div class="form-group row"><label class="col-lg-2 col-form-label">Title</label>
-                        <div class="col-lg-10"><input type="text" name="title" placeholder="Title" class="form-control">
+                        <div class="col-lg-10"><input type="text" value="{{ $item->title }}"  name="title" placeholder="Title" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row"><label class="col-lg-2 col-form-label">Description</label>
 
-                        <div class="col-lg-10"><input type="text" name="description" placeholder="Description"
+                        <div class="col-lg-10"><input type="text" value="{{ $item->description }}"  name="description" placeholder="Description"
                                 class="form-control"></div>
                     </div>
 
@@ -132,5 +157,7 @@
         </form>
     </div>
 </div>
+@endforeach
+
 
 @endsection

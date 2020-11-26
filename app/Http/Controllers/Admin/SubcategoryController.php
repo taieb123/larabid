@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Subcategory;
+use App\Category;
 use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
@@ -15,7 +16,8 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        return view('Admin.templates.subcategory.index');
+        $categories = Category::all();
+        return view('Admin.templates.subcategory.index',compact('categories'));
     }
 
     /**
@@ -36,7 +38,15 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|min:3',
+       ],[
+           'title.required' => 's\'il vous plait saisie titre',
+           'title.min' => 's\'il vous plait saisie titre de 3 caractere au moins',
+       ]);
+
+        Subcategory::create($request->all());
+        return redirect()->route('subcategory.index')->with('success','Sub-category a éte bien creé');
     }
 
     /**

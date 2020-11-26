@@ -6,6 +6,24 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
+        <div class="col-md-12">
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
         <div class="col-lg-7">
             <div class="ibox ">
                 <div class="ibox-title">
@@ -18,23 +36,27 @@
                 </div>
                 <div class="ibox-content">
                     <form action="{{ route('subcategory.store') }}" method="POST" enctype="multipart/form-data">
-                        <div class="form-group row"><label class="col-lg-2 col-form-label">Title</label>
-                            <div class="col-lg-10"><input type="text" name="title" placeholder="Title"
-                                    class="form-control">
+                        @csrf
+                        <div class="form-group row">
+                            <label class="col-lg-2 col-form-label">Title</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="title" placeholder="Title" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group row"><label class="col-lg-2 col-form-label">Description</label>
-
-                            <div class="col-lg-10"><input type="text" name="description" placeholder="Description"
-                                    class="form-control"></div>
+                        <div class="form-group row">
+                            <label class="col-lg-2 col-form-label">Description</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="description" placeholder="Description" class="form-control">
+                            </div>
                         </div>
 
                         <div class="form-group row"><label class="col-sm-2 col-form-label">Select category</label>
-                            <div class="col-sm-10"><select class="form-control m-b" name="id_category">
-                                    <option>option 1</option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="id_category">
+                                    <option>Select category</option>
+                                    @foreach ($categories as $item)
+                                    <option value="{{ $item->id }}"> {{ $item->title }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -105,7 +127,7 @@
 <!--Modal-->
 <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="{{ route('subcategory.update') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('subcategory.index') }}" method="POST" enctype="multipart/form-data">
             <div class="modal-content animated flipInY">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
