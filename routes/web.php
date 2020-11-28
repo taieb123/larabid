@@ -18,7 +18,7 @@ Auth::routes();
 
 Route::get('/', function () {
     return view('User.layouts.index');
-});
+})->name('home_route');
 
 /**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {

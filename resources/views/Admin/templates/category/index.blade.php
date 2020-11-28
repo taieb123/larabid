@@ -88,19 +88,7 @@
                                             class="fa fa-warning"></i> <span class="bold">Warning</span></button>
                                 </td>
                             </tr>
-
                             @endforeach
-                            <tr>
-                                <td>Voiture</td>
-                                <td>category du voiture</td>
-                                <td>bmw,citroen, peugeot</td>
-                                <td>
-                                    <button class="btn btn-info " data-toggle="modal" data-target="#myModal1"
-                                        type="button"><i class="fa fa-paste"></i> Edit</button>
-                                    <button class="btn btn-warning delete_category_btn" data-route="{{ route('category.destroy', $item->id) }}" data-id="1" type="button"><i
-                                            class="fa fa-warning"></i> <span class="bold">Warning</span></button>
-                                </td>
-                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>

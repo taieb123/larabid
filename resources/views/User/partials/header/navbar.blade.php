@@ -1,30 +1,14 @@
 <header>
         <div class="header-top">
             <div class="container">
-                <div class="header-top-wrapper">
-                    <ul class="customer-support">
-                        <li>
-                            <a href="#0" class="mr-3"><i class="fas fa-phone-alt"></i><span class="ml-2 d-none d-sm-inline-block">Customer Support</span></a>
-                        </li>
-                        <li>
-                            <i class="fas fa-globe"></i>
-                            <select name="language" class="select-bar">
-                                <option value="en">En</option>
-                                <option value="Bn">Bn</option>
-                                <option value="Rs">Rs</option>
-                                <option value="Us">Us</option>
-                                <option value="Pk">Pk</option>
-                                <option value="Arg">Arg</option>
-                            </select>
-                        </li>
-                    </ul>
+                <div class="header-top-wrapper justify-content-end">
                     <ul class="cart-button-area">
                         <li>
                             <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">08</span></a>
-                        </li>                        
+                        </li>
                         <li>
-                            <a href="sign-in.html" class="user-button"><i class="flaticon-user"></i></a>
-                        </li>                        
+                            <a href="{{ route('login') }}" class="user-button"><i class="flaticon-user"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -33,30 +17,13 @@
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="{{ route('home_route') }}">
                             <img src="{{ asset('User/images/logo/logo.png')}}" alt="logo">
                         </a>
                     </div>
                     <ul class="menu ml-auto">
                         <li>
-                            <a href="#0">Home</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="index.html">Home Page One</a>
-                                </li>
-                                <li>
-                                    <a href="index-2.html">Home Page Two</a>
-                                </li>
-                                <li>
-                                    <a href="index-3.html">Home Page Three</a>
-                                </li>
-                                <li>
-                                    <a href="index-4.html">Home Page Four</a>
-                                </li>
-                                <li>
-                                    <a href="index-5.html">Home Page Five</a>
-                                </li>
-                            </ul>
+                            <a href="{{ route('home_route') }}">Home</a>
                         </li>
                         <li>
                             <a href="product.html">Auction</a>
