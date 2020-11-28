@@ -27,18 +27,25 @@
                     <div class="or">
                         <span>Or</span>
                     </div>
-                    <form class="login-form">
+                    <form method="POST" class="login-form" action="{{ route('register') }}">
+                        @csrf
                         <div class="form-group mb-30">
-                            <label for="login-email"><i class="far fa-envelope"></i></label>
-                            <input type="text" id="login-email" placeholder="Email Address">
+                            <label for="signup-name"></label>
+                            <input type="text" name="name" required id="signup-name" value="{{ old('name') }}" placeholder="User name">
                         </div>
                         <div class="form-group mb-30">
-                            <label for="login-pass"><i class="fas fa-lock"></i></label>
-                            <input type="password" id="login-pass" placeholder="Password">
+                            <label for="signup-email"><i class="far fa-envelope"></i></label>
+                            <input type="email" name="email" required id="signup-email" value="{{ old('email') }}" placeholder="Email Address">
+                        </div>
+                        <div class="form-group mb-30">
+                            <label for="signup-pass"><i class="fas fa-lock"></i></label>
+                            <input type="password" required name="password" id="signup-pass" placeholder=" Password">
                             <span class="pass-type"><i class="fas fa-eye"></i></span>
                         </div>
-                        <div class="form-group checkgroup mb-30">
-                            <input type="checkbox" name="terms" id="check"><label for="check">The Sbidu Terms of Use apply</label>
+                        <div class="form-group mb-30">
+                            <label for="signup-cpass"><i class="fas fa-lock"></i></label>
+                            <input type="password" required name="password_confirmation" id="signup-cpass" placeholder="Confirmation Password">
+                            <span class="pass-type"><i class="fas fa-eye"></i></span>
                         </div>
                         <div class="form-group mb-0">
                             <button type="submit" class="custom-button">LOG IN</button>
@@ -49,7 +56,7 @@
                     <div class="section-header mb-0">
                         <h3 class="title mt-0">ALREADY HAVE AN ACCOUNT?</h3>
                         <p>Log in and go to your Dashboard.</p>
-                        <a href="sign-in.html" class="custom-button transparent">Login</a>
+                        <a href="{{ route('login') }}" class="custom-button transparent">Register</a>
                     </div>
                 </div>
             </div>
