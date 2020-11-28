@@ -41,9 +41,10 @@ class MigrateInOrder extends Command
                 '2014_10_12_000000_create_users_table.php',
                 '2014_10_12_100000_create_password_resets_table.php',
                 '2019_08_19_000000_create_failed_jobs_table.php',
+                '2020_11_27_184857_edit_columns_in_users_table.php',
                 '2020_11_21_134221_create_category_table.php',
                 '2020_11_21_134052_create_subcategory_table.php',
-                '2020_11_21_190742_create_sysfile_table.php'
+                '2020_11_21_191200_create_sysfile_table.php'
             ];
 
             foreach($migrations as $migration)

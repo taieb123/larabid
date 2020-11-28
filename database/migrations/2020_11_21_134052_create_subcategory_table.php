@@ -18,7 +18,7 @@ class CreateSubcategoryTable extends Migration
             $table->string('title');
             $table->string('description')->nullable();
             $table->string('logo')->nullable();
-            $table->foreignId('id_category');
+            $table->unsignedBigInteger('id_category')->nullable();
             $table->foreign('id_category')->references('id')->on('category');
             $table->timestamps();
         });
