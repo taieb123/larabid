@@ -15,6 +15,16 @@ class CreateOffertTable extends Migration
     {
         Schema::create('offert', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->float('prix_dev',8,2)->default(0);
+            $table->float('prix_fin',8,2)->default(0);
+            $table->integer('nbr_enchere');
+            $table->foreignId('id_subcategory')->nullable();
+            $table->foreignId('id_details')->nullable();
+            $table->foreign('id_subcategory')->references('id')->on('subcategory');
+            $table->foreign('id_details')->references('id')->on('details');
+
             $table->timestamps();
         });
     }

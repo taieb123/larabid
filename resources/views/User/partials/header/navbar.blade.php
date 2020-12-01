@@ -35,7 +35,7 @@
                         </li>
                         @auth
                             <li><a href="">Profile</a></li>
-                            <li><a href="">Ajouter produit</a></li>
+                            <li><a href="{{ route('create_offer') }}">Ajouter produit</a></li>
                         @endauth
                         <li>
                             <a href="contact.html">Contact</a>

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
+use App\Details;
 use App\Http\Controllers\Controller;
-use App\Offert;
 use Illuminate\Http\Request;
 
-class OffertController extends Controller
+class DetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class OffertController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -25,7 +25,7 @@ class OffertController extends Controller
      */
     public function create()
     {
-        return view('User.templates.auction.index');
+        //
     }
 
     /**
@@ -42,10 +42,10 @@ class OffertController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Offert  $offert
+     * @param  \App\Details  $details
      * @return \Illuminate\Http\Response
      */
-    public function show(Offert $offert)
+    public function show(Details $details)
     {
         //
     }
@@ -53,10 +53,10 @@ class OffertController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Offert  $offert
+     * @param  \App\Details  $details
      * @return \Illuminate\Http\Response
      */
-    public function edit(Offert $offert)
+    public function edit(Details $details)
     {
         //
     }
@@ -65,10 +65,10 @@ class OffertController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Offert  $offert
+     * @param  \App\Details  $details
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Offert $offert)
+    public function update(Request $request, Details $details)
     {
         //
     }
@@ -76,10 +76,10 @@ class OffertController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Offert  $offert
+     * @param  \App\Details  $details
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Offert $offert)
+    public function destroy(Details $details)
     {
         //
     }

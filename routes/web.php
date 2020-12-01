@@ -31,4 +31,6 @@ Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], fun
 /**This Group for USer acces who need auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:user']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/add_item', 'User\OffertController@create')->name('create_offer');
+    Route::resource('offer', 'User\OffertController');
 });
