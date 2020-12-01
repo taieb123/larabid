@@ -18,21 +18,44 @@
 
                 <form method="POST" action="{{ route('login') }}" class="login-form">
                     @csrf
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <select class="form-control"  id="category">
+                              <option>choose category</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <select class="form-control" name="id_category" id="subcategory">
+                              <option>choose subcategory</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                    </div>
                     <div class="row ">
                         <div class="form-group col-md-6">
-                            <label for="login-email"><i class="far fa-envelope"></i></label>
-                            <input type="text" required value="{{ old('email') }}" name="email" id="login-email"
-                                placeholder="Email Address">
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                            <label for="title"><i class="far fa-envelope"></i></label>
+                            <input type="text" required value="{{ old('title') }}" name="title" id="title"
+                                placeholder="Title offert">
+
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="login-pass"><i class="fas fa-lock"></i></label>
-                            <input type="password" required id="login-pass" name="password" placeholder="Password">
+                            <label for="prix_deb"><i class="fas fa-dollar-sign"></i></label>
+                            <input type="text" required id="prix_deb" value="{{ old('prix_deb') }}" name="prix_deb" placeholder="Prix depart">
                         </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-md-12">
+                            <textarea class="form-control" name="description" placeholder="description" id="description" rows="4"></textarea>
+                        </div>
+
                     </div>
 
                     <div class="form-group mb-0">
