@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('User/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{ asset('User/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{ asset('User/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('User/css/dropzone.css')}}">
     <link rel="stylesheet" href="{{ asset('User/css/main.css')}}">
     
     <link rel="shortcut icon" href="{{ asset('User/images/favicon.png')}}" type="image/x-icon">

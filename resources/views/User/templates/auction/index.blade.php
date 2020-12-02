@@ -57,11 +57,17 @@
                         </div>
 
                     </div>
+                   
 
                     <div class="form-group mb-0">
                         <button type="submit" class="custom-button">Enregistrer</button>
                     </div>
                 </form>
+                 <div class="row">
+                        <form id="dropzoneForm" class="dropzone" action="{{ route('dropzone.upload') }}">
+                            @csrf
+                        </form>
+                 </div>
             </div>
 
         </div>

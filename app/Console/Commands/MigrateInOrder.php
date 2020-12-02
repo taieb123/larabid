@@ -44,7 +44,10 @@ class MigrateInOrder extends Command
                 '2020_11_27_184857_edit_columns_in_users_table.php',
                 '2020_11_21_134221_create_category_table.php',
                 '2020_11_21_134052_create_subcategory_table.php',
-                '2020_11_21_191200_create_sysfile_table.php'
+                '2020_11_21_191200_create_sysfile_table.php',
+                '2020_12_01_225235_create_details_table.php',
+                '2020_11_28_152807_create_offert_table.php',
+
             ];
 
             foreach($migrations as $migration)

@@ -34,3 +34,9 @@ Route::group(['middleware' => ['auth', 'role:user']], function () {
     Route::get('/add_item', 'User\OffertController@create')->name('create_offer');
     Route::resource('offer', 'User\OffertController');
 });
+
+
+Route::post('dropzone/upload', 'DropzoneController@upload')->name('dropzone.upload');
+Route::get('dropzone/fetch', 'DropzoneController@fetch')->name('dropzone.fetch');
+Route::get('dropzone/delete', 'DropzoneController@delete')->name('dropzone.delete');
+

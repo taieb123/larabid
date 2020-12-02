@@ -12,4 +12,6 @@
     <script src="{{ asset('User/js/magnific-popup.min.js')}}"></script>
     <script src="{{ asset('User/js/yscountdown.min.js')}}"></script>
     <script src="{{ asset('User/js/jquery-ui.min.js')}}"></script>
+    <script src="{{ asset('User/js/dropzone.js')}}"></script>
     <script src="{{ asset('User/js/main.js')}}"></script>
+    <script src="{{ asset('User/js/sites.js')}}"></script>

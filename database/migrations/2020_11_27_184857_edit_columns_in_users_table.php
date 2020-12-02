@@ -16,7 +16,7 @@ class EditColumnsInUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropUnique(['email']);
             $table->string('password')->nullable()->change();
-            $table->json('social')->nullable();
+            $table->text('social')->nullable();
             $table->softDeletes();
             $table->unique(['email', 'deleted_at']);
         });
