@@ -46,3 +46,25 @@
       }
     })
   });
+
+  var number = 0;
+$(document).on('click','.btn-add-field',function(){
+    number = $(this).closest('.tab-pane').find('.form-row.custom_field').length;
+    title_field_label ="Label";
+    title_field_value = "value"
+    input_type = $(this).data('type');
+
+    console.log($(this));
+    console.log($(this));
+    html =  '<div class="row ">'+
+    '<div class="form-group col-md-6">'+
+        '<label>'+title_field_label+'</label>'+
+        '<input type="text" required value="" name="label[0][]" placeholder="">'+
+   '</div>'+
+   '<div class="form-group col-md-6">'+
+        '<label for="prix_deb">'+title_field_value+'</label>'+
+        '<input type="text" required id="prix_deb"  name="value[0][]" placeholder="">'+
+    '</div></div>';
+    $(html).insertBefore('.zone_add_new_field');
+    number++;
+  });

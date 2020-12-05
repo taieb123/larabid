@@ -5,7 +5,7 @@ Template URI: http://pixner.net/sbidu/
 Author: uiaxis
 Author URI: https://themeforest.net/user/uiaxis
 Version: 1.0.0
-Text Domain: 
+Text Domain:
 */
 /*
 ///// CSS Index \\
@@ -8838,3 +8838,24 @@ button.custom-button {
 }
 
 /*All Animation Ends Here*/
+.btn-add-field{
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid;
+    float: right;
+    margin-bottom: 20px;
+    padding: 10px 40px 10px 10px;
+    width: 20%;
+}
+
+
+.btn-add-field::after{
+    content: "";
+    background: url('../images/plus.svg');
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    position: absolute;
+    z-index: 999;
+    background-size: contain;
+}

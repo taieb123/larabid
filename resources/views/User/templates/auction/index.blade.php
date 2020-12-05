@@ -57,17 +57,31 @@
                         </div>
 
                     </div>
-                   
+                    <!--Custom details-->
+                    <div class="row ">
+                        <div class="form-group col-md-6">
+                            <label for="title">Label</label>
+                            <input type="text" required value="" name="label[0][]" id="title"
+                                placeholder="Title offert">
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="prix_deb">Value</label>
+                            <input type="text" required id="prix_deb"  name="value[0][]" placeholder="Prix depart">
+                        </div>
+                    </div>
+                    <!--Custom details-->
+                   <div class="row">
+                       <div class="col-md-12">
+                            <button type="button" data-type="text" class="btn-add-field">Add new field</button>
+                       </div>
+                   </div>
+
 
                     <div class="form-group mb-0">
                         <button type="submit" class="custom-button">Enregistrer</button>
                     </div>
                 </form>
-                 <div class="row">
-                        <form id="dropzoneForm" class="dropzone" action="{{ route('dropzone.upload') }}">
-                            @csrf
-                        </form>
-                 </div>
             </div>
 
         </div>
