@@ -20,8 +20,9 @@ class CreateOffertTable extends Migration
             $table->float('prix_dev',8,2)->default(0);
             $table->float('prix_fin',8,2)->default(0);
             $table->integer('nbr_enchere');
-            $table->dateTime('start_date',0);
-            $table->dateTime('end_date',0);
+            $table->integer('image');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->foreignId('id_subcategory')->nullable();
             $table->foreignId('id_details')->nullable();
             $table->foreign('id_subcategory')->references('id')->on('subcategory');

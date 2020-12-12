@@ -19,6 +19,7 @@ class CreateSysfileTable extends Migration
             $table->string('extension');
             $table->string('tablename')->nullable();
             $table->string('field')->nullable();
+            $table->string('id_field')->nullable();
             $table->timestamps();
         });
     }

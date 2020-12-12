@@ -16,19 +16,8 @@
                 </div>
 
 
-                <form method="POST" action="{{ route('login') }}" class="login-form">
+                <form method="POST" action="{{ route('offer.create') }}" enctype="multipart/form-data" class="login-form">
                     @csrf
-                    <input type="hidden" name="" id="urlgetSubcategory" value="{{url('get-list-subcity')}}">
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <select class="form-control"  id="category" onchange="ChargeCategory()">
-                              <option>choose category</option>
-                              @foreach ($categories as $item)
-                                <option value="{{ $item->id }}">{{ $item->title }}</option>
-                              @endforeach
-                            </select>
-                          </div>
-                    </div>
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <label for="title"><i class="far fa-envelope"></i></label>
@@ -42,17 +31,37 @@
                         </div>
                     </div>
                     <div class="row">
-
                         <div class="form-group col-md-12">
                             <textarea class="form-control" name="description" placeholder="description" id="description" rows="4"></textarea>
                         </div>
-
                     </div>
-                    <h6>Caracterestique</h6>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <select class="form-control"  id="category" onchange="ChargeCategory()">
+                              <option>choose category</option>
+                              @foreach ($categories as $item)
+                                <option value="{{ $item->id }}">{{ $item->title }}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                    </div>
+                    <div class="row ">
+                        <div class="form-group col-md-6">
+                            <p style="text-align: left;margin-bottom:5px;margin-top:20px;">Start date</p>
+                            <input type="date" style="padding:0 20px;" required value="{{ old('start_date') }}" name="start_date" id="start_date">
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <p style="text-align: left;margin-bottom:5px;margin-top:20px;">End date</p>
+                            <input type="date" style="padding:0 20px;" required id="end_date" value="{{ old('end_date') }}" name="end_date">
+                        </div>
+                    </div>
+
+                    <p style="text-align: left;margin-bottom:5px;margin-top:20px;">characteristic</p>
                     <!--Custom details-->
                     <div class="row  custom_zone">
                         <div class="form-group col-md-6">
-                            <label for="title">Label</label>
+                            <label for="title">Title</label>
                             <input type="text" required value="" name="label[0][]" id="title"
                                 placeholder="Title offert">
 
