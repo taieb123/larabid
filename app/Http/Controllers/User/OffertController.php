@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Offert;
+use App\Category;
 use Illuminate\Http\Request;
 
 class OffertController extends Controller
@@ -25,7 +26,8 @@ class OffertController extends Controller
      */
     public function create()
     {
-        return view('User.templates.auction.index');
+        $categories = Category::all();
+        return view('User.templates.auction.index',compact('categories'));
     }
 
     /**

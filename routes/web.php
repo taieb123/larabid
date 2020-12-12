@@ -40,3 +40,5 @@ Route::post('dropzone/upload', 'DropzoneController@upload')->name('dropzone.uplo
 Route::get('dropzone/fetch', 'DropzoneController@fetch')->name('dropzone.fetch');
 Route::get('dropzone/delete', 'DropzoneController@delete')->name('dropzone.delete');
 
+/**Get Sub-category by  ajax */
+Route::get('get-Subcategory', 'Admin\SubcategoryController@findSubcategroyByCategory');

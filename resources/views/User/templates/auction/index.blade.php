@@ -18,23 +18,19 @@
 
                 <form method="POST" action="{{ route('login') }}" class="login-form">
                     @csrf
+                    <input type="hidden" name="" id="urlgetSubcategory" value="{{url('get-list-subcity')}}">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <select class="form-control"  id="category">
+                            <select class="form-control"  id="category" onchange="ChargeCategory()">
                               <option>choose category</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
+                              @foreach ($categories as $item)
+                                <option value="{{ $item->id }}">{{ $item->title }}</option>
+                              @endforeach
                             </select>
                           </div>
                           <div class="form-group col-md-6">
                             <select class="form-control" name="id_category" id="subcategory">
                               <option>choose subcategory</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
                             </select>
                           </div>
                     </div>
@@ -57,8 +53,9 @@
                         </div>
 
                     </div>
+                    <h6>Caracterestique</h6>
                     <!--Custom details-->
-                    <div class="row ">
+                    <div class="row  custom_zone">
                         <div class="form-group col-md-6">
                             <label for="title">Label</label>
                             <input type="text" required value="" name="label[0][]" id="title"
@@ -73,7 +70,7 @@
                     <!--Custom details-->
                    <div class="row">
                        <div class="col-md-12">
-                            <button type="button" data-type="text" class="btn-add-field">Add new field</button>
+                            <button type="button" data-type="text" class="btn-add-field">Ajouter caracterestique</button>
                        </div>
                    </div>
 

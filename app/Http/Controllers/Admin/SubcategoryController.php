@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Subcategory;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubcategoryController extends Controller
 {
@@ -92,5 +93,18 @@ class SubcategoryController extends Controller
     public function destroy(Subcategory $subcategory)
     {
         //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     */
+    public function findSubcategroyByCategory(Request $request){
+        $states = DB::table('subcategory')
+        ->select('id', 'title')
+                ->where('id_category','=',$request->id_category)
+                ->pluck('id','title');
+        return response()->json($states);
     }
 }
