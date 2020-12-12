@@ -31,7 +31,7 @@
                             <a href="product.html">Auction</a>
                         </li>
                         <li>
-                            <a href="product.html">Product</a>
+                            <a href="{{ route('product_route') }}">Product</a>
                         </li>
                         @auth
                             <li><a href="">Profile</a></li>

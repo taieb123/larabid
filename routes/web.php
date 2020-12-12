@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('User.layouts.index');
+    return view('User.templates.home');
 })->name('home_route');
+Route::get('/products',function(){
+    return view('User.templates.product');
+})->name('product_route');
 
 /**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {
