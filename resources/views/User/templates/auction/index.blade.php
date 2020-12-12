@@ -16,8 +16,9 @@
                 </div>
 
 
-                <form method="POST" action="{{ route('offer.create') }}" enctype="multipart/form-data" class="login-form">
+                <form method="POST" action="{{ route('offer.store') }}" enctype="multipart/form-data" class="login-form">
                     @csrf
+
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <label for="title"><i class="far fa-envelope"></i></label>
@@ -27,7 +28,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="prix_deb"><i class="fas fa-dollar-sign"></i></label>
-                            <input type="text" required id="prix_deb" value="{{ old('prix_deb') }}" name="prix_deb" placeholder="Prix depart">
+                            <input type="number" required id="prix_deb" value="{{ old('prix_deb') }}" name="prix_deb" placeholder="Prix depart">
                         </div>
                     </div>
                     <div class="row">
@@ -61,18 +62,17 @@
                     <!--Custom details-->
                     <div class="row  custom_zone">
                         <div class="form-group col-md-6">
-                            <label for="title">Title</label>
-                            <input type="text" required value="" name="label[0][]" id="title"
-                                placeholder="Title offert">
+                            <label >Title</label>
+                            <input type="text" required value="" name="label[0][]" placeholder="Label">
 
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="prix_deb">Value</label>
-                            <input type="text" required id="prix_deb"  name="value[0][]" placeholder="Prix depart">
+                            <label>Value</label>
+                            <input type="text" required  name="value[0][]" placeholder="Value">
                         </div>
                     </div>
                     <!--Custom details-->
-                   <div class="row">
+                   <div class="row btn_to_add_field">
                        <div class="col-md-12">
                             <button type="button" data-type="text" class="btn-add-field">Ajouter caracterestique</button>
                        </div>

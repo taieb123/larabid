@@ -17,17 +17,13 @@ class CreateOffertTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->float('prix_dev',8,2)->default(0);
+            $table->float('prix_deb',8,2)->default(0);
             $table->float('prix_fin',8,2)->default(0);
             $table->integer('nbr_enchere');
-            $table->integer('image');
+            $table->integer('image')->default(0);
             $table->date('start_date');
             $table->date('end_date');
-            $table->foreignId('id_subcategory')->nullable();
-            $table->foreignId('id_details')->nullable();
-            $table->foreign('id_subcategory')->references('id')->on('subcategory');
-            $table->foreign('id_details')->references('id')->on('details');
-
+            $table->text('details')->nullable();
             $table->timestamps();
         });
     }

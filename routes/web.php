@@ -25,10 +25,10 @@ Route::get('/products',function(){
 
 Route::get('/details',function(){
     return view('User.templates.details');})
-  ->name('details_route') ; 
+  ->name('details_route') ;
 Route::get('/profile',function(){
     return view('User.templates.profile');
-})->name('profile_route') ; 
+})->name('profile_route') ;
 Route::get('/mybid',function(){
     return view('User.templates.mybid');
 })
@@ -36,7 +36,7 @@ Route::get('/mybid',function(){
 Route::get('/dashboard',function(){
     return view('User.templates.dashboard');
 })
-->name('dashboard_route'); 
+->name('dashboard_route');
 
 /**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {
@@ -57,6 +57,9 @@ Route::group(['middleware' => ['auth', 'role:user']], function () {
 Route::post('dropzone/upload', 'DropzoneController@upload')->name('dropzone.upload');
 Route::get('dropzone/fetch', 'DropzoneController@fetch')->name('dropzone.fetch');
 Route::get('dropzone/delete', 'DropzoneController@delete')->name('dropzone.delete');
+
+
+Route::post('/offert/fileupload/','User\OffertController@fileupload')->name('offert.fileupload');
 
 /**Get Sub-category by  ajax */
 Route::get('get-Subcategory', 'Admin\SubcategoryController@findSubcategroyByCategory');

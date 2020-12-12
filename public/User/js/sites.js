@@ -50,13 +50,11 @@
   var number = 0;
 $(document).on('click','.btn-add-field',function(){
 
-    number = $( "input[name^='label']" ).length + 1;
+    number = $( "input[name^='label']" ).length;
     title_field_label ="Label";
     title_field_value = "value"
     input_type = $(this).data('type');
 
-    console.log($(this));
-    console.log($(this));
     html =  '<div class="row ">'+
     '<div class="form-group col-md-6">'+
         '<label>'+title_field_label+'</label>'+
@@ -66,7 +64,7 @@ $(document).on('click','.btn-add-field',function(){
         '<label for="prix_deb">'+title_field_value+'</label>'+
         '<input type="text" required id="prix_deb"  name="value['+number+'][]" placeholder="'+title_field_value+'">'+
     '</div></div>';
-    $(html).insertAfter('.custom_zone');
+    $(html).insertBefore('.btn_to_add_field');
     number++;
   });
 
