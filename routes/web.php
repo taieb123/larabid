@@ -26,7 +26,17 @@ Route::get('/products',function(){
 Route::get('/details',function(){
     return view('User.templates.details');})
   ->name('details_route') ; 
-
+Route::get('/profile',function(){
+    return view('User.templates.profile');
+})->name('profile_route') ; 
+Route::get('/mybid',function(){
+    return view('User.templates.mybid');
+})
+->name('mybid_route');
+Route::get('/dashboard',function(){
+    return view('User.templates.dashboard');
+})
+->name('dashboard_route'); 
 
 /**This Group for all Admin ROUTES and will be under /admins with auth and Role Middleware */
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admins'], function () {
