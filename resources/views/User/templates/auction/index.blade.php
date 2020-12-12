@@ -20,17 +20,12 @@
                     @csrf
                     <input type="hidden" name="" id="urlgetSubcategory" value="{{url('get-list-subcity')}}">
                     <div class="row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <select class="form-control"  id="category" onchange="ChargeCategory()">
                               <option>choose category</option>
                               @foreach ($categories as $item)
                                 <option value="{{ $item->id }}">{{ $item->title }}</option>
                               @endforeach
-                            </select>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <select class="form-control" name="id_category" id="subcategory">
-                              <option>choose subcategory</option>
                             </select>
                           </div>
                     </div>

@@ -18,7 +18,11 @@ class SubcategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('Admin.templates.subcategory.index',compact('categories'));
+        $subcategory =  DB::table('subcategory')
+         ->join('category', 'category.id', '=', 'subcategory.id_category')
+         ->select('subcategory.*', 'category.title as category_title','category.id as category_id')
+         ->get();
+        return view('Admin.templates.subcategory.index',compact(['categories','subcategory']));
     }
 
     /**
@@ -81,7 +85,9 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, Subcategory $subcategory)
     {
-        //
+        $subcategory->update($request->all());
+
+        return redirect()->route('subcategory.index')->with('success','Subcategory a éte bien modifiée');
     }
 
     /**

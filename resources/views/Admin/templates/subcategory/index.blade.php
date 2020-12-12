@@ -98,17 +98,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>bmw</td>
-                                <td>voiture category</td>
-                                <td> voiture</td>
-                                <td>
-                                    <button class="btn btn-info " data-toggle="modal" data-target="#myModal2"
-                                        type="button"><i class="fa fa-paste"></i> Edit</button>
-                                    <button class="btn btn-warning delete_category_btn" data-id="1" type="button"><i
-                                            class="fa fa-warning"></i> <span class="bold">Warning</span></button>
-                                </td>
-                            </tr>
+                            @foreach ($subcategory as $item)
+                                <tr>
+                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->description }}</td>
+                                    <td>{{ $item->category_title }}</td>
+                                    <td>
+                                        <button class="btn btn-info " data-toggle="modal" data-target="#myModal{{ $item->id }}"
+                                            type="button"><i class="fa fa-paste"></i> Edit</button>
+                                        <button class="btn btn-warning delete_category_btn" data-id="1" type="button"><i
+                                                class="fa fa-warning"></i> <span class="bold">Warning</span></button>
+                                    </td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                         <tfoot>
                             <tr>
@@ -124,10 +127,11 @@
         </div>
     </div>
 </div>
-<!--Modal-->
-<div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+@foreach ($subcategory as $item)
+    <!--Modal-->
+<div class="modal inmodal" id="myModal{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="{{ route('subcategory.index') }}" method="POST" enctype="multipart/form-data">
+        <form  action="{{ route('subcategory.update',$item->id) }}" method="POST" enctype="multipart/form-data">
             <div class="modal-content animated flipInY">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span
@@ -136,20 +140,21 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group row"><label class="col-lg-2 col-form-label">Title</label>
-                        <div class="col-lg-10"><input type="text" name="title" placeholder="Title" class="form-control">
+                        <div class="col-lg-10"><input type="text" name="title" value="{{ $item->title }}" placeholder="Title" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row"><label class="col-lg-2 col-form-label">Description</label>
 
-                        <div class="col-lg-10"><input type="text" name="description" placeholder="Description"
+                        <div class="col-lg-10"><input type="text" value="{{ $item->description }}" name="description" placeholder="Description"
                                 class="form-control"></div>
                     </div>
                     <div class="form-group row"><label class="col-sm-2 col-form-label">Select category</label>
-                        <div class="col-sm-10"><select class="form-control m-b" name="id_category">
-                                <option>option 1</option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option>option 4</option>
+                        <div class="col-sm-10">
+                            <select class="form-control m-b" name="id_category">
+                                        <option>Select category</option>
+                                    @foreach ($categories as $item)
+                                        <option value="{{ $item->id }}"> {{ $item->title }}</option>
+                                    @endforeach
                             </select>
                         </div>
                     </div>
@@ -169,5 +174,7 @@
         </form>
     </div>
 </div>
+@endforeach
+
 
 @endsection
