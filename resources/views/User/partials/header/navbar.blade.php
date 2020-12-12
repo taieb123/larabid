@@ -34,8 +34,34 @@
                             <a href="{{ route('product_route') }}">Product</a>
                         </li>
                         @auth
-                            <li><a href="">Profile</a></li>
-                            <li><a href="{{ route('create_offer') }}">Ajouter produit</a></li>
+                          
+                            <li><a href="{{ route('create_offer') }}">Add product</a></li>
+                            <li>
+                                    <a href="#0">Dashboard</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="dashboard.html">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="profile.html">Personal Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="my-bid.html">My Bids</a>
+                                        </li>
+                                        <li>
+                                            <a href="winning-bids.html">Winning Bids</a>
+                                        </li>
+                                        <li>
+                                            <a href="notifications.html">My Alert</a>
+                                        </li>
+                                        <li>
+                                            <a href="my-favorites.html">My Favorites</a>
+                                        </li>
+                                        <li>
+                                            <a href="referral.html">Referrals</a>
+                                        </li>
+                                    </ul>
+                                </li>
                         @endauth
                         <li>
                             <a href="contact.html">Contact</a>
