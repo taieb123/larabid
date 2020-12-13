@@ -48,7 +48,7 @@
                             <span class="pass-type"><i class="fas fa-eye"></i></span>
                         </div>
                         <div class="form-group mb-0">
-                            <button type="submit" class="custom-button">LOG IN</button>
+                            <button type="submit" class="custom-button">Sign up</button>
                         </div>
                     </form>
                 </div>

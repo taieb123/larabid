@@ -11,8 +11,7 @@
         <div class="account-wrapper mt--100 mt-lg--440">
             <div class="left-side w-100">
                 <div class="section-header">
-                    <h2 class="title">Bonjour</h2>
-                    <p>Remplir tous les information necessaire svp</p>
+                    <h2 class="title">Hello There</h2>
                 </div>
 
 
@@ -80,7 +79,7 @@
 
 
                     <div class="form-group mb-0">
-                        <button type="submit" class="custom-button">Enregistrer</button>
+                        <button type="submit" class="custom-button">Save & process to upload file</button>
                     </div>
                 </form>
             </div>

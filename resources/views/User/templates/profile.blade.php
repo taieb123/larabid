@@ -16,8 +16,8 @@
                                 <input type="file" id="profile-pic" class="d-none">
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="#0">Percy Reed</a></h5>
-                                <span class="username">john@gmail.com</span>
+                                <h5 class="title"><a href="#0">{{ Auth::user()->name }}</a></h5>
+                                <span class="username">{{ Auth::user()->email }}</span>
                             </div>
                         </div>
                         <ul class="dashboard-menu">
@@ -30,9 +30,9 @@
                             <li>
                                 <a href="{{route('mybid_route')}}"><i class="flaticon-auction"></i>My Bids</a>
                             </li>
-                         
-                           
-                          
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                                 <ul class="dash-pro-body">
                                     <li>
                                         <div class="info-name">Name</div>
-                                        <div class="info-value">Albert Owens</div>
+                                        <div class="info-value">{{ Auth::user()->name }}</div>
                                     </li>
                                     <li>
                                         <div class="info-name">Date of Birth</div>
