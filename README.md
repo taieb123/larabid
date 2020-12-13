@@ -1,7 +1,7 @@
 # Laravel Solution ``Lara Bid``
 
 ## 1 Import DataBase
-Create data base an import file you will find it under folder 'Documentation' file 'larabis.sql'
+Create data base an import file you will find it under folder ``Documentation`` file ``larabis.sql``
 
 
 ## 2 Configure file env
