@@ -8,20 +8,27 @@ Create data base an import file you will find it under folder 'Documentation' fi
 You will find the '.env' under the root path of the project
 ![Include Static template](Documentation/Images/configure_env.png)
 
-## 3 Executed Command
-ececute command under root path 'composer install' to dowload all vendor and field need it in laravel
-execute command under root folder 'npm i' to download all node_modules file need it 
+## 3 Create missing Folder 
+
+You need to create folder  ``framework`` if no existe under ``storage``  and under folder ``framework`` need to create 3 different folder ``cache``, ``sessions`` and ``views``
+
+
+## 4 Executed Command
+ececute command under root path ``composer install`` and ``npm_install`` to dowload all vendor file need it for laravel and node_modules
+
+
 
 ## Static Access
-
-1) Admin access
+#### Admin access
 
 Mail : taieb20002@gmail.com
 Pass : taiebrekik
 
-2) User access
+#### User access
 
 Mail : taieb20001@gmail.com
 Pass : taiebrekik
-  
+
+
+
 
